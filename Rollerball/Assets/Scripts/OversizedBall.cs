@@ -10,7 +10,7 @@ public class OversizedBall : MonoBehaviour
         //Raises the larger ball so it is the appropriate height to sit on the arena floor.
         GameController.playerObject.transform.localPosition = 
             new Vector3(GameController.playerObject.transform.localPosition.x, 
-            GameController.playerObject.transform.localPosition.y+1, 
+            1, 
             GameController.playerObject.transform.localPosition.z);
     }
 
@@ -22,7 +22,7 @@ public class OversizedBall : MonoBehaviour
         //Adjusts the position of the ball so the smaller ball doesn't drop when the size is changed.
         GameController.playerObject.transform.localPosition = 
             new Vector3(GameController.playerObject.transform.localPosition.x, 
-            GameController.playerObject.transform.localPosition.y - 0.5f, 
+            0.5f, 
             GameController.playerObject.transform.localPosition.z);
     }
 }
