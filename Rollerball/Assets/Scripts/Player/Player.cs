@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int health = 3;
+    public static int health = 3;
 
     public event Action<Player> onPlayerDeath;
 
@@ -28,5 +28,4 @@ public class Player : MonoBehaviour
             collidedWithEnemy(enemy);
         }
     }
-
 }

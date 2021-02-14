@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,18 +6,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public int damage;
     public Transform targetTransform;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static int score = 0;
 
     void FixedUpdate()
     {
@@ -35,19 +22,20 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            score++;
         }
     }
 
     public void Attack(Player player)
     {
-        player.health -= this.damage;
+        Player.health -= this.damage;
         Destroy(this.gameObject);
     }
 
     public void Initialize(Transform target, float moveSpeed, int health)
     {
         this.targetTransform = target;
-        this.moveSpeed = moveSpeed;
+        this.moveSpeed = moveSpeed - SpeedAdjustment.sliderSpeed;
         this.health = health;
     }
 

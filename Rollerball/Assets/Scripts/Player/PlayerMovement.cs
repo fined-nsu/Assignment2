@@ -2,6 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static float sliderValue;
 
     public float acceleration;
     public float maxSpeed;
